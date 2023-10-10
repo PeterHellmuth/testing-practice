@@ -1,7 +1,13 @@
 import "./style.css";
 
 function capitalize(string) {
-  return a + b;
+  if (string.length === 0) {
+    return string.toUpperCase();
+  }
+  if (string.length > 0) {
+    return string.charAt(0).toUpperCase() + string.slice(1, string.length);
+  }
+  return null;
 }
 
-export { sum };
+export { capitalize };
