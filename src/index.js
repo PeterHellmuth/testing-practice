@@ -1,6 +1,6 @@
 import "./style.css";
 
-function sum(a, b) {
+function capitalize(string) {
   return a + b;
 }
 
