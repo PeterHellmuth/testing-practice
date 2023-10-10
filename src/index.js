@@ -37,8 +37,30 @@ const calculator = {
   },
 };
 
-function caesarCipher(string) {
-  return null;
+function caesarCipher(str, n) {
+  let returnStr = "";
+  const lowerZCode = 122;
+  const capitalZCode = 90;
+  const regex = /^[a-zA-Z]+$/;
+  for (let i = 0; i < str.length; i += 1) {
+    if (regex.test(str.charAt(i))) {
+      if (
+        (str.charCodeAt(i) <= lowerZCode &&
+          str.charCodeAt(i) + n > lowerZCode) ||
+        (str.charCodeAt(i) <= capitalZCode &&
+          str.charCodeAt(i) + n > capitalZCode)
+      ) {
+        returnStr += String.fromCharCode(
+          str.charCodeAt(i) + n - 26 - 26 * Math.floor(n / 26), // wrap around but if we're moving more than 25 characters then wrap around again as needed
+        );
+      } else {
+        returnStr += String.fromCharCode(str.charCodeAt(i) + n);
+      }
+    } else {
+      returnStr += str.charAt(i);
+    }
+  }
+  return returnStr;
 }
 
 function analyzeArray(arr) {

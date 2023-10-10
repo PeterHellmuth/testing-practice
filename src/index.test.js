@@ -29,12 +29,13 @@ test("Calculator multiplies two numbers.", () => {
 });
 
 test("Shift x number of characters according to Caesar chipher.", () => {
-  expect(caesarCipher("defend the east wall of the castle", 1)).toBe(
-    "efgfoe uif fbtu xbmm pg uif dbtumf",
+  expect(caesarCipher("zZ!! defend the east wall of the castle", 1)).toBe(
+    "aA!! efgfoe uif fbtu xbmm pg uif dbtumf",
   );
+  expect(caesarCipher("attack at dawn", 5)).toBe("fyyfhp fy ifbs");
 });
 
-test("Calculator multiplies two numbers.", () => {
+test("Analyze array and return object with results.", () => {
   expect(analyzeArray([1, 8, 3, 4, 2, 6])).toMatchObject({
     average: 4,
     min: 1,
