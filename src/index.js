@@ -10,7 +10,14 @@ function capitalize(string) {
   return null;
 }
 
-function reverseString() {}
+function reverseString(str) {
+  if (str.length === 1) {
+    return str;
+  }
+  return (
+    str.charAt(str.length - 1) + reverseString(str.slice(0, str.length - 1))
+  );
+}
 
 const calculator = {
   add(x, y) {
