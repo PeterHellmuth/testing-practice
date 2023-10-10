@@ -64,7 +64,27 @@ function caesarCipher(str, n) {
 }
 
 function analyzeArray(arr) {
-  return null;
+  const returnObj = { average: null, min: null, max: null, length: null };
+
+  if (arr) {
+    const sumOfArr = arr.reduce((total, item) => total + item);
+    returnObj.average = sumOfArr / arr.length;
+
+    returnObj.min = arr[0];
+    returnObj.max = arr[0];
+    arr.forEach((item) => {
+      if (item < returnObj.min) {
+        returnObj.min = item;
+      }
+      if (item > returnObj.max) {
+        returnObj.max = item;
+      }
+    });
+
+    returnObj.length = arr.length;
+  }
+
+  return returnObj;
 }
 
 export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
